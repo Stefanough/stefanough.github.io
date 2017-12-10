@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SFA BLG  - middleman</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/scribbles/feed.xml" />
+    <link href="/stylesheets/assets/normalize.css" rel="stylesheet" media="all" />
+  </head>
+  <body>
+          <nav class="top-bar">
+            <a href="/">Stefan Armijo</a>
+            <a href="/blog">blog</a>
+            <a href="/notes">notes</a>
+            <a href="/about">about</a>
+          </nav>
+
+    <div id="main" role="main">
+      <h2>Using these resources:</h2>
+
+<h4>tutorials:</h4>
+
+<p><a href="https://medium.com/@ryanswapp/build-a-blog-with-middleman-and-host-on-github-pages-aab82a7fc56e">https://medium.com/@ryanswapp/build-a-blog-with-middleman-and-host-on-github-pages-aab82a7fc56e</a></p>
+
+<p><a href="http://12devs.co.uk/articles/204/">http://12devs.co.uk/articles/204/</a></p>
+
+<p><a href="https://adrianching.com/how-to-build-a-website-using-middleman-and-github-pages/">https://adrianching.com/how-to-build-a-website-using-middleman-and-github-pages/</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=yoGielteT64">https://www.youtube.com/watch?v=yoGielteT64</a></p>
+
+<p><a href="http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/">http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/</a></p>
+
+<p><a href="https://webdesign.tutsplus.com/articles/how-to-setup-a-static-website-with-middleman--cms-25275">https://webdesign.tutsplus.com/articles/how-to-setup-a-static-website-with-middleman&ndash;cms-25275</a></p>
+
+<p><em>middlman with two blogs:</em>
+<a href="https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/">https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/</a></p>
+
+<h4>official docs:</h4>
+
+<p><a href="http://www.rubydoc.info/github/middleman/middleman">http://www.rubydoc.info/github/middleman/middleman</a></p>
+
+<p><a href="http://www.rubydoc.info/github/middleman/middleman-blog">http://www.rubydoc.info/github/middleman/middleman-blog</a></p>
+
+<h4>Blog inspiration:</h4>
+
+<p><a href="https://vgpena.github.io/">https://vgpena.github.io/</a></p>
+
+<p><a href="https://ashfurrow.com/">https://ashfurrow.com/</a></p>
+
+<p><a href="https://dana.lol/">https://dana.lol/</a></p>
+
+<p><a href="http://billyfung.com/">http://billyfung.com/</a></p>
+
+<p><a href="http://epochwolf.com/">http://epochwolf.com/</a></p>
+
+<p><a href="https://cole.money/blog/">https://cole.money/blog/</a></p>
+
+<h2>Configuration notes:</h2>
+
+<ul>
+<li>Install middleman on a cloud9 virtual machine
+
+<ul>
+<li><code>$ sudo gem install middleman</code>
+<code>$ middleman init &lt;some_project_name&gt; --template=blog</code> to create the skeleton. <code>--template=blog</code> is optional.
+    - Add <code>&quot;middleman-livereload&quot;, &quot;~&gt; 3.4.3&quot;</code> to Gemfile, <code>activate: livereload</code> in config.rb to use livereload
+    - Add <code>&#39;middleman-deploy&#39;, &#39;~&gt; 2.0.0.pre.alpha&#39;</code> to Gemfile, <code>deploy.deploy_method =:git</code> in config.rb. Replace <code>:git</code> if needed.</li>
+<li>Start test server with <code>$ middleman server $IP -p $PORT</code>
+View at <code>http://&lt;workspace_name&gt;-&lt;user_name&gt;.c9users.io:8080/</code></li>
+<li><code>$ middleman build</code></li>
+<li>Upload files from <code>/build</code> to s3 bucket and view.</li>
+</ul></li>
+<li>How to integrate with GitHub?????</li>
+<li>Assosciate www.stefanarmijo.com with the blog</li>
+<li>Deploy to Amazon s3
+
+<ul>
+<li>install awscli on cloud9
+
+<ul>
+<li>new virtual workspace configured for python development</li>
+<li>use instructions here: <a href="https://docs.c9.io/docs/deploying-via-cli">https://docs.c9.io/docs/deploying-via-cli</a></li>
+<li><code>$ aws configure</code> - configure awscli</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2>Design Ideas/goals:</h2>
+
+<p><strong>Want</strong>
+    - <del>vertica nav bar</del> No, horizontal for now.
+        - blog
+        - notes
+        - projects (notes in here?)
+        - project euler/code_something? (put in notes?)
+        - photos
+        - about
+    - front page with just latest updates</p>
+
+<h4>Plan for notes page:</h4>
+
+<ul>
+<li>main notes page will have links to differente subject (Ruby, Rails, Sql, Vim, Etc&hellip;)</li>
+<li>    each link goes to a markdown file of that subjects notes. One markdown file per subject?</li>
+<li>    different sections for programming related notes and others?</li>
+<li><div class="highlight"><pre class="highlight plaintext"><code>add front matter to each notes page? subject and whatnot?
+</code></pre></div></li>
+<li><p>Imagined workflow:???</p></li>
+</ul>
+
+<h2>Timeline:</h2>
+
+<ul>
+<li><strong>ToDo</strong>: all links working in build.</li>
+<li><strong>ToDo</strong>: RecentArticles only on frontpage.</li>
+<li><strong>ToDo</strong>: import all notes.</li>
+<li><p><del><strong>ToDo</strong>: Soved!</del></p>
+
+<ul>
+<li><p>Links on danalol: </p>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt;li&gt;&lt;%= link_to 'Archives', '/browse' %&gt;&lt;/li&gt;
+</code></pre></div></li>
+<li><p>Links on STFNBLG:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt;%= link_to 'blog', 'blog.html' %&gt;
+</code></pre></div>
+<p>Solved with <code>activate :directory_indexes</code> in configure.rb</p></li>
+</ul></li>
+<li><p><del>get blog link in navbar to link to /blog</del></p>
+
+<ul>
+<li>had to link to /blog.html to get to the blog.html.erb file</li>
+</ul></li>
+<li><p>different <mark>layouts</mark> for blog page and front page</p></li>
+<li><p>just created two blogs in the &lsquo;basic_blog&rsquo; project - &ldquo;scribbles&rdquo; and &ldquo;notes&rdquo;</p>
+
+<ul>
+<li>use <a href="https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/">https://billyfung.com/writing/2017/01/multiple-blogs-with-middleman/</a></li>
+<li>how do I render pages from both blogs where I want them?</li>
+</ul></li>
+<li><p>Current error when launching MM server and loading front page: <code>you must either use the flag --blog (ex. --blog &#39;myBlog&#39;) when calling this method, or add blog: [blog_name] to your page&#39;s frontmatter</code></p>
+
+<ul>
+<li>What is causing this error? There is a <code>blog_controller</code> method in the middleman-blog gem.</li>
+<li>Changed <code>page_articles.each</code>&hellip; method to <code>blog(&#39;scribbles&#39;).page_articles.each</code>&hellip; method
+
+<ul>
+<li>new error: <code>undefined method page_articles&#39; for #&lt;Middleman::Blog::BlogData:0x00000003a32958&gt;</code></li>
+<li>Solved above error. Cause was another call to <code>blog.articles</code> method with out specifing blog name. changed to <code>blog(&#39;scribbles&#39;).articles</code>.</li>
+</ul></li>
+</ul></li>
+<li><p>ToDo: add a few large notes markdown files to <code>/notes</code> and have them displayed as links on hte main notes page.</p></li>
+<li><p><del><strong>ToDo</strong>: change how articles are generated. Want to generate &lsquo;notes articles&rsquo; without the date in the filename.</del></p></li>
+<li><div class="highlight"><pre class="highlight plaintext"><code>  Solved by changing blog configuration in `config.rb` with the option `blog.sources = "{title}.html"`
+</code></pre></div></li>
+<li><p>Get notes to render how I want I want.</p></li>
+<li><p>pass options to the markdown configuration:</p>
+<div class="highlight"><pre class="highlight ruby"><code>  <span class="n">set</span> <span class="ss">:markdown</span><span class="p">,</span>
+  <span class="ss">fenced_code_blocks: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">strikethrough: </span><span class="kp">true</span><span class="p">,</span>
+  <span class="ss">smartypants: </span><span class="kp">true</span>
+</code></pre></div>
+<p>set the <code>strikethrough</code> option to <code>true</code> and pass it to <code>:markdown</code></p></li>
+<li><p>do a test build and see  if syntax highlighting works</p>
+<div class="highlight"><pre class="highlight plaintext"><code>== Request: /notes.html
+       error  build/feed.xml
+       You have more than one blog so you must either use the flag --blog (ex. --blog 'myBlog') when calling this method, or add blog: [blog_name] to your page's frontmatter
+       /var/lib/gems/2.3.0/gems/middleman-blog-4.0.2/lib/middleman-blog/helpers.rb:41:in `blog_controller'
+</code></pre></div>
+<p>fixed error. <code>blog.articles</code> method in feed.xml file. have to specify which blog when working with multiple blogs.</p>
+
+<p><code>middleman build</code> runs successfully but code blocks still not highlighted. Requires styling?</p></li>
+<li><p><strong>ToDo</strong>: Can I use nokogiri to look inside my notes files and generate links to each bullet point?</p></li>
+<li><p><strong>ToDo</strong>: Render available methods, and constants on a page.</p></li>
+</ul>
+
+<h2>Notes:</h2>
+
+<ul>
+<li><p><strong>layout files</strong> - Should have only the template language extension. In this case <code>.erb</code></p></li>
+<li><p><strong>template files</strong> - Will be rendered in html and should have the extension <code>.html.erb</code> </p></li>
+</ul>
+
+    </div>
+
+
+    <aside>
+      <h2>Recent Articles</h2>
+      <ol>
+          <li><a href="/scribbles/2017/12/07/test-4-4444/">test 4.4444</a> <span>Dec  7</span></li>
+          <li><a href="/scribbles/2017/12/07/test-3-333/">test 3.333</a> <span>Dec  7</span></li>
+          <li><a href="/scribbles/2017/12/07/test-1-1/">test 1.1</a> <span>Dec  7</span></li>
+          <li><a href="/scribbles/2017/12/07/test-2-22/">test 2.22</a> <span>Dec  7</span></li>
+      </ol>
+
+    </aside>
+  </body>
+</html>

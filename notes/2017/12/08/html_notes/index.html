@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SFA BLG  - html</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/scribbles/feed.xml" />
+    <link href="/stylesheets/assets/normalize.css" rel="stylesheet" media="all" />
+  </head>
+  <body>
+          <nav class="top-bar">
+            <a href="/">Stefan Armijo</a>
+            <a href="/blog">blog</a>
+            <a href="/notes">notes</a>
+            <a href="/about">about</a>
+          </nav>
+
+    <div id="main" role="main">
+      <h2>HTML Notes</h2>
+
+<p><strong>Section</strong> -</p>
+
+<p><strong>Header</strong> - Content about the HTML document that is not rendered by the client browser. Content for the header is placed in the <code>&lt;head&gt;&lt;/head&gt;</code> tag</p>
+
+<p>Header content could include information about the document (title, description etc.), external style sheets, script files and more.</p>
+
+<p><strong>Title</strong> - The title of the web page goes in the <title></title> tag in the header. Title of the web page as it appears in a browser tab, for example.</p>
+
+<p><strong>Meta</strong> - Data in the <meta> self closing tag in the header describes the page to search engines. Attributes can include <code>name</code> and <code>content</code></p>
+<div class="highlight"><pre class="highlight html"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Shakshuka Recipe<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"The best recipe for Middle Eastern Shakshuka, a cumin spiced tomato sauce with sautéd onions and chili peppers topped with poached eggs."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div>
+<p>Other <code>meta</code> attributes include authorship, content-language, social media specific descriptions, and information for browsers about how the page should be served.</p>
+
+<p><strong>Scripts</strong> - Scripts can either be written in the <code>&lt;script&gt;&lt;/script&gt;</code> tag or a <code>src</code> can be provided. The language for scripts defaults to JavaScript, but any language can be set in the attributes. Here is the google analytics script that should be put into the header:</p>
+<div class="highlight"><pre class="highlight html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">o</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="nx">r</span><span class="p">,</span><span class="nx">a</span><span class="p">,</span><span class="nx">m</span><span class="p">){</span><span class="nx">i</span><span class="p">[</span><span class="s1">'GoogleAnalyticsObject'</span><span class="p">]</span><span class="o">=</span><span class="nx">r</span><span class="p">;</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">]</span><span class="o">=</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">]</span><span class="o">||</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="p">(</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">].</span><span class="nx">q</span><span class="o">=</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">].</span><span class="nx">q</span><span class="o">||</span><span class="p">[]).</span><span class="nx">push</span><span class="p">(</span><span class="kr">arguments</span><span class="p">)},</span><span class="nx">i</span><span class="p">[</span><span class="nx">r</span><span class="p">].</span><span class="nx">l</span><span class="o">=</span><span class="mi">1</span><span class="o">*</span><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span><span class="nx">a</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">o</span><span class="p">),</span>
+    <span class="nx">m</span><span class="o">=</span><span class="nx">s</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">o</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="nx">a</span><span class="p">.</span><span class="k">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="nx">g</span><span class="p">;</span><span class="nx">m</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">m</span><span class="p">)</span>
+    <span class="p">})(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s1">'script'</span><span class="p">,</span><span class="s1">'https://www.google-analytics.com/analytics.js'</span><span class="p">,</span><span class="s1">'ga'</span><span class="p">);</span>
+
+    <span class="nx">ga</span><span class="p">(</span><span class="s1">'create'</span><span class="p">,</span> <span class="s1">'UA-12345678-9'</span><span class="p">,</span> <span class="s1">'auto'</span><span class="p">);</span>
+    <span class="nx">ga</span><span class="p">(</span><span class="s1">'send'</span><span class="p">,</span> <span class="s1">'pageview'</span><span class="p">);</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<p><strong>Link</strong> - The link tag also belongs in the header. This is used to load an external style sheet for the web page. The important attributes for this self closing tag are <code>rel</code> which defines the relationship to the page and must have a value of <code>&quot;stylesheet&quot;</code> when loading an external stylesheet file, <code>href</code> specifies the url of the defined resource, and <code>type</code> declares the content language for the file being loaded.</p>
+
+<p><strong>Footer</strong> -</p>
+
+<p><strong>Body</strong> - Content that is to be rendered by the client browser.</p>
+
+<p><strong>Document</strong> -</p>
+
+<p><strong>DOM</strong> - Document Object Model. The hierarchical structure of a conventional HTML document. The structure can be thought of as tree-like, the trunk being the main html element enclosed in the html tags. <code>&lt;body&gt;</code> and <code>&lt;head&gt;</code> grow off of <code>&lt;html&gt;</code> like branches. <code>&lt;body&gt;</code> may sprout many more branches such as <code>&lt;p&gt;</code> and <code>&lt;form&gt;</code>.</p>
+
+<p><strong>Element</strong> - A set of matching tags and everything in between. Elements are the basic building blocks of HTML. Elements define the semantic meaning of their content. Elements can contain other elements.</p>
+
+<p><strong>Attributes</strong> - Attributes are used to add additional information to tags. They reside in the opening of a tag and consist of an attribute name and an attribute value.</p>
+<div class="highlight"><pre class="highlight html"><code>    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">""</span> <span class="na">action=</span><span class="s">"index.html"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;/form&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>In the above, `class`, `action`, and `method` are attributes for the form tag.
+
+Some attributes have only two values and are known as `boolean attributes`. They can be shortened to an empty value or just the attribute name.
+</code></pre></div><div class="highlight"><pre class="highlight html"><code>    <span class="nt">&lt;input</span> <span class="na">required=</span><span class="s">"required"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;input</span> <span class="na">required=</span><span class="s">""</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;input</span> <span class="na">required</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>All forms of the <code>required</code> attribute above have the same meaning.</p>
+
+<p><strong>Self Closing Tag</strong> - Tags where all the attributes as well as the value are in between the <code>&lt; &gt;</code> and there is no closing tag <code>&lt;/tag&gt;</code> are called <em>self closing tags</em>. <code>&lt;input&gt;</code>, for example is a self closing tag. Self closing tags contain no content. <code>&lt;textarea&gt;&lt;/textarea&gt;</code> and <code>&lt;body&gt;&lt;/body&gt;</code> are not self closing tags.</p>
+
+<p><strong>Global Attributes</strong> - HTML attributes that are accessible to all elements.</p>
+
+<ul>
+<li><p><strong>id</strong> - The id global attribute defines a unique identifier (ID) which must be unique in the whole document. Its purpose is to identify the element when linking (using a fragment identifier), scripting, or styling (with CSS).</p>
+
+<p>This attribute&rsquo;s value is an opaque string: this means that web author must not use it to convey any information. Particular meaning, for example semantic meaning, must not be derived from the string.</p>
+
+<p>This attribute&rsquo;s value must not contain whitespace (spaces, tabs etc.). Browsers treat non-conforming IDs that contain whitespace as if the whitespace is part of the ID. In contrast to the class attribute, which allows space-separated values, elements can only have one single ID.</p></li>
+<li><p><strong>class</strong> - Used to group or separate elements for styling purposes. For example you can have special <code>&lt;p class=&quot;special&quot;&gt;</code> elements with different styling than regular <code>&lt;p&gt;</code> elements.</p></li>
+</ul>
+<div class="highlight"><pre class="highlight html"><code>    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"cat_rental_requests_url"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"cat_rental_request_cat_id"</span><span class="nt">&gt;</span>Cat:<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"cat_rental_request[cat_id]"</span> <span class="na">id=</span><span class="s">"cat_rental_request_cat_id"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>-- Please Select a Cat --<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;</span><span class="err">%</span> <span class="na">Cat</span><span class="err">.</span><span class="na">all</span><span class="err">.</span><span class="na">each</span> <span class="na">do</span> <span class="err">|</span><span class="na">cat</span><span class="err">|</span> <span class="err">%</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;</span><span class="err">%</span> <span class="na">selected =</span><span class="err"> </span><span class="s">@rental_request.cat_id</span> <span class="err">==</span> <span class="na">cat</span><span class="err">.</span><span class="na">id</span> <span class="err">%</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option</span> <span class="err">&lt;%=</span> <span class="na">selected</span> <span class="err">?</span> <span class="err">"</span><span class="na">selected</span><span class="err">"</span> <span class="na">:</span> <span class="err">""</span> <span class="err">%</span><span class="nt">&gt;</span> value="<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">cat</span><span class="err">.</span><span class="na">id</span> <span class="err">%</span><span class="nt">&gt;</span>"&gt;
+            <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">cat</span><span class="err">.</span><span class="na">name</span> <span class="err">%</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/option&gt;</span>
+
+        <span class="nt">&lt;</span><span class="err">%</span> <span class="na">end</span> <span class="err">%</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>  
+</code></pre></div>
+<p>In the above:</p>
+<div class="highlight"><pre class="highlight html"><code>  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"cat_rental_requests_url"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight html"><code>  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"cat_rental_request_cat_id"</span><span class="nt">&gt;</span>Cat:<span class="nt">&lt;/label&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight html"><code>  <span class="nt">&lt;option</span> <span class="na">disabled</span> <span class="na">selected</span><span class="nt">&gt;</span>-- Please Select a Cat --<span class="nt">&lt;/option&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight html"><code>  <span class="nt">&lt;</span><span class="err">%</span> <span class="na">Cat</span><span class="err">.</span><span class="na">all</span><span class="err">.</span><span class="na">each</span> <span class="na">do</span> <span class="err">|</span><span class="na">cat</span><span class="err">|</span> <span class="err">%</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;</span><span class="err">%</span> <span class="na">selected =</span><span class="err"> </span><span class="s">@rental_request.cat_id</span> <span class="err">==</span> <span class="na">cat</span><span class="err">.</span><span class="na">id</span> <span class="err">%</span><span class="nt">&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight html"><code>  <span class="nt">&lt;option</span> <span class="err">&lt;%=</span> <span class="na">selected</span> <span class="err">?</span> <span class="err">"</span><span class="na">selected</span><span class="err">"</span> <span class="na">:</span> <span class="err">""</span> <span class="err">%</span><span class="nt">&gt;</span> value="<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">cat</span><span class="err">.</span><span class="na">id</span> <span class="err">%</span><span class="nt">&gt;</span>"&gt; <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">cat</span><span class="err">.</span><span class="na">name</span> <span class="err">%</span><span class="nt">&gt;</span> <span class="nt">&lt;/option&gt;</span>
+</code></pre></div>
+<p>In the above code: the <code>action=&quot;cat_rental_requests_url&quot;</code> attribute in the form tag contains a helper method that tells Rails that along with the <code>method=&quot;post&quot;</code> attribute to send the following form data to the <code>create</code> action in the <code>CarRentalRequestController</code> this is based on the following routes:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>      cat_rental_requests GET    /cat_rental_requests(.:format)          cat_rental_requests#index
+                          POST   /cat_rental_requests(.:format)          cat_rental_requests#create
+   new_cat_rental_request GET    /cat_rental_requests/new(.:format)      cat_rental_requests#new
+  edit_cat_rental_request GET    /cat_rental_requests/:id/edit(.:format) cat_rental_requests#edit
+       cat_rental_request GET    /cat_rental_requests/:id(.:format)      cat_rental_requests#show
+                          PATCH  /cat_rental_requests/:id(.:format)      cat_rental_requests#update
+                          PUT    /cat_rental_requests/:id(.:format)      cat_rental_requests#update
+                          DELETE /cat_rental_requests/:id(.:format)      cat_rental_requests#destroy
+</code></pre></div>
+<p>Inside the <code>&lt;label&gt;</code> tag the <code>for=&quot;cat_rental_request_cat_id&quot;</code> attribute is linking the label with the unique <code>id=&quot;&quot;</code> in the <code>&lt;select&gt;</code> list below it. Inside the <code>&lt;select&gt;</code> tag, the <code>name=&quot;cat_rental_request[cat_id]&quot;</code> attribute tells rails that it is</p>
+
+<p>The <code>&lt;select&gt;</code> list will have display each cats name with <code>&lt;%= cat.name %&gt;</code> but send the cats id with <code>value=&quot;&lt;%= cat.id %&gt;&quot;</code> as part of the form data package.</p>
+
+    </div>
+
+
+    <aside>
+      <h2>Recent Articles</h2>
+      <ol>
+          <li><a href="/scribbles/2017/12/07/test-4-4444/">test 4.4444</a> <span>Dec  7</span></li>
+          <li><a href="/scribbles/2017/12/07/test-3-333/">test 3.333</a> <span>Dec  7</span></li>
+          <li><a href="/scribbles/2017/12/07/test-1-1/">test 1.1</a> <span>Dec  7</span></li>
+          <li><a href="/scribbles/2017/12/07/test-2-22/">test 2.22</a> <span>Dec  7</span></li>
+      </ol>
+
+    </aside>
+  </body>
+</html>
